@@ -1,0 +1,144 @@
+body {
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f4f4f4;
+	margin: 0;
+}
+
+.timer-container {
+	text-align: center;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 350px;
+}
+
+.jumbotron {
+	background-color: #e9ecef;
+	padding: 20px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.jumbotron h1 {
+	margin: 0;
+	font-size: 2em;
+}
+
+.jumbotron h2 {
+	margin: 0;
+	font-size: 1.5em;
+	color: #6c757d;
+}
+
+.timer-card {
+	perspective: 1000px;
+}
+
+canvas {
+	margin: 20px 0;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+}
+
+button,
+input {
+	padding: 10px 20px;
+	font-size: 16px;
+	margin: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+	border-radius: 5px; /* 둥근 모서리 */
+}
+
+button:hover,
+input:hover {
+	background-color: #ddd;
+	transform: scale(1.05);
+}
+
+input {
+	width: 60px;
+	text-align: center;
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		transform: translateX(-15px);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		transform: translateX(15px);
+	}
+}
+
+.shake {
+	animation: shake 0.7s;
+}
+
+.flip {
+	transform: rotateY(180deg);
+}
+
+.flipped {
+	transform: scaleX(-1);
+}
+
+.history {
+	margin-top: 20px;
+	text-align: left;
+	background-color: #f9f9f9;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+	font-family: "Courier New", Courier, monospace;
+}
+
+.history h3 {
+	margin-bottom: 10px;
+	font-family: "Courier New", Courier, monospace;
+	text-align: center;
+}
+
+.history ol {
+	list-style-type: decimal;
+	padding: 0;
+	margin-left: 20px;
+}
+
+.history li {
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.delete-btn {
+	background-color: #ff6347;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.delete-btn:hover {
+	background-color: #e55347;
+}

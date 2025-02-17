@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뽀모도로 타이머 - 생산성 향상을 위한 시간 관리 도구</title>
+  <meta name="description" content="뽀모도로 타이머를 사용하여 집중력을 높이고 생산성을 향상시키세요. 간단한 인터페이스로 작업 시간을 효율적으로 관리할 수 있습니다.">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebApplication",
+      "name": "뽀모도로 타이머",
+      "url": "http://example.com",
+      "description": "뽀모도로 타이머를 사용하여 집중력을 높이고 생산성을 향상시키세요.",
+      "applicationCategory": "Productivity"
+    }
+    </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="timer-container">
+    <div class="jumbotron">
+      <h1>뽀모도로 타이머</h1>
+      <h2 id="sessionType">집중 시간</h2>
+    </div>
+    <div id="timerCard" class="timer-card">
+      <canvas id="timerCanvas" width="300" height="300"></canvas>
+    </div>
+    <div>
+      <input type="number" id="minuteInput" placeholder="분" min="0" max="60">
+      <input type="number" id="secondInput" placeholder="초" min="0" max="59">
+    </div>
+    <div>
+      <button id="start">시작</button>
+      <button id="stop">정지</button>
+      <button id="reset">리셋</button>
+      <button id="toggleSession">세션 전환</button>
+    </div>
+    <div id="history" class="history">
+      <h3>타이머 이력</h3>
+      <ol id="historyList"></ol>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
