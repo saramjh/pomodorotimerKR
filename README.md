@@ -1,4 +1,5 @@
 # 뽀모도로 타이머
+
 ![image](https://github.com/user-attachments/assets/2db8f8c1-9c7d-4d20-9a31-0e9737aeb550)
 
 뽀모도로 타이머를 사용하여 집중력을 높이고 생산성을 향상시키세요. 간단한 인터페이스로 작업 시간을 효율적으로 관리할 수 있습니다.
