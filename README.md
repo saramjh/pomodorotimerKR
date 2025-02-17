@@ -37,7 +37,7 @@ pomodoroTimer/
 
 1. 이 저장소를 클론합니다:
    ```bash
-   git clone https://github.com/ojihun/pomodoroTimer.git
+   git clone https://github.com/ojihun/pomodoroTimerKR.git
    ```
 2. 프로젝트 디렉토리로 이동합니다:
    ```bash
