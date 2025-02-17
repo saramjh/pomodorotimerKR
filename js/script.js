@@ -90,6 +90,7 @@ class PomodoroTimer {
 		this.canvas.classList.add("shake")
 		setTimeout(() => {
 			this.canvas.classList.remove("shake")
+			alert("타이머가 완료되었습니다!") // 경고 창 추가
 			this.flipCard()
 		}, 700)
 	}
