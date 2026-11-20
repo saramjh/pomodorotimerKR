@@ -8,7 +8,7 @@ const vm = require('node:vm')
 
 const source = fs.readFileSync(path.join(__dirname, '../js/script.js'), 'utf8')
 
-function startApp() {
+function startApp({ rect = { left: 0, top: 0, width: 300, height: 300 } } = {}) {
   const events = new Map()
   const painter = {}
   for (const fn of ['clearRect', 'beginPath', 'arc', 'fill', 'stroke', 'moveTo', 'closePath', 'fillText']) {
@@ -18,7 +18,7 @@ function startApp() {
   const canvas = {
     width: 300, height: 300, classList: cls,
     getContext: () => painter,
-    getBoundingClientRect: () => ({ left: 0, top: 0, width: 300, height: 300 }),
+    getBoundingClientRect: () => rect,
     addEventListener: (name, callback) => events.set(name, callback),
   }
   const make = () => ({
@@ -53,6 +53,16 @@ test('initializes against the actual timerCanvas element without undefined globa
 test('a tap at the quarter-circle position adjusts the live timer and inputs', () => {
   const { context, events, elements } = startApp()
   events.get('click')({ clientX: 300, clientY: 150 })
+  assert.equal(vm.runInContext('pomodoroTimer.timeLeft', context), 375)
+  assert.equal(elements.get('minuteInput').value, 6)
+  assert.equal(elements.get('secondInput').value, 15)
+})
+
+test('clicking a CSS-scaled canvas uses its displayed center', () => {
+  const { context, events, elements } = startApp({
+    rect: { left: 20, top: 50, width: 200, height: 200 },
+  })
+  events.get('click')({ clientX: 219, clientY: 150 })
   assert.equal(vm.runInContext('pomodoroTimer.timeLeft', context), 375)
   assert.equal(elements.get('minuteInput').value, 6)
   assert.equal(elements.get('secondInput').value, 15)
