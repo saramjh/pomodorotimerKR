@@ -115,8 +115,8 @@ class PomodoroTimer {
 
 	setTimeFromTouch(x, y) {
 		const rect = this.canvas.getBoundingClientRect()
-		const centerX = rect.left + this.canvas.width / 2
-		const centerY = rect.top + this.canvas.height / 2
+		const centerX = rect.left + rect.width / 2
+		const centerY = rect.top + rect.height / 2
 		const angle = Math.atan2(y - centerY, x - centerX) + Math.PI / 2
 		const normalizedAngle = (angle + 2 * Math.PI) % (2 * Math.PI) // Normalize angle to [0, 2π]
 		const maxTime = this.isWorkSession ? this.workTime : this.breakTime

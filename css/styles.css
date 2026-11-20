@@ -3,7 +3,9 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
+	box-sizing: border-box;
+	padding: 16px;
 	background-color: #f4f4f4;
 	margin: 0;
 }
@@ -15,6 +17,8 @@ body {
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	width: 350px;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 .jumbotron {
@@ -40,6 +44,8 @@ body {
 }
 
 canvas {
+	max-width: 100%;
+	height: auto;
 	margin: 20px 0;
 	border-radius: 50%;
 	cursor: pointer;
@@ -50,7 +56,8 @@ canvas {
 
 button,
 input {
-	padding: 10px 20px;
+	box-sizing: border-box;
+	padding: 10px 12px;
 	font-size: 16px;
 	margin: 5px;
 	cursor: pointer;
