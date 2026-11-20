@@ -171,7 +171,7 @@ document.getElementById("toggleSession").addEventListener("click", () => pomodor
 document.getElementById("minuteInput").addEventListener("input", () => pomodoroTimer.setTimeFromInput())
 document.getElementById("secondInput").addEventListener("input", () => pomodoroTimer.setTimeFromInput())
 
-canvas.addEventListener("click", (event) => {
+pomodoroTimer.canvas.addEventListener("click", (event) => {
 	pomodoroTimer.setTimeFromTouch(event.clientX, event.clientY)
 })
 
